@@ -283,7 +283,7 @@ open class ImagePicker {
          *
          *  Only used with ImageProvider.GALLERY or ImageProvider.CAMERA
          */
-        private fun createIntent(): Intent {
+        open fun createIntent(): Intent {
             val intent = Intent(activity, ImagePickerActivity::class.java)
             intent.putExtras(getBundle())
             return intent
