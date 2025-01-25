@@ -73,7 +73,7 @@ open class ImagePicker {
         }
     }
 
-    class Builder(private val activity: Activity) {
+    open class Builder(private val activity: Activity) {
 
         private var fragment: Fragment? = null
 
@@ -355,7 +355,7 @@ open class ImagePicker {
         /**
          * Start ImagePickerActivity with given Argument
          */
-        private fun startActivity(reqCode: Int) {
+        open fun startActivity(reqCode: Int) {
             val intent = Intent(activity, ImagePickerActivity::class.java)
             intent.putExtras(getBundle())
             if (fragment != null) {

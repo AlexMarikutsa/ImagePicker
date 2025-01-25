@@ -22,7 +22,7 @@ import com.github.dhaval2404.imagepicker.util.FileUriUtils
  * @version 1.0
  * @since 04 January 2019
  */
-class ImagePickerActivity : AppCompatActivity() {
+open class ImagePickerActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "image_picker"
@@ -43,8 +43,11 @@ class ImagePickerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        WindowCompat.setDecorFitsSystemWindows(window, true)
+        customConfigs()
         loadBundle(savedInstanceState)
     }
+
+    abstract fun customConfigs()
 
     /**
      * Save all appropriate activity state.
