@@ -13,7 +13,8 @@ import com.github.dhaval2404.imagepicker.provider.CompressionProvider
 import com.github.dhaval2404.imagepicker.provider.CropProvider
 import com.github.dhaval2404.imagepicker.provider.GalleryProvider
 import com.github.dhaval2404.imagepicker.util.FileUriUtils
-
+import android.view.WindowInsets
+import androidx.core.view.WindowCompat
 /**
  * Pick Image
  *
@@ -41,6 +42,18 @@ open class ImagePickerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, true)
+        window.decorView.setOnApplyWindowInsetsListener { view, insets ->
+            val systemBarsInsets = insets.getInsets(WindowInsets.Type.systemBars())
+            view.setPadding(
+                view.paddingLeft,
+                systemBarsInsets.top, // Врахування статус-бару
+                view.paddingRight,
+                systemBarsInsets.bottom // Врахування навігаційної панелі
+            )
+            insets
+        }
+
         customConfigs()
         loadBundle(savedInstanceState)
     }
