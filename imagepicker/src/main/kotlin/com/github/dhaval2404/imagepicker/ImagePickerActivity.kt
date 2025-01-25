@@ -13,7 +13,6 @@ import com.github.dhaval2404.imagepicker.provider.CompressionProvider
 import com.github.dhaval2404.imagepicker.provider.CropProvider
 import com.github.dhaval2404.imagepicker.provider.GalleryProvider
 import com.github.dhaval2404.imagepicker.util.FileUriUtils
-//import androidx.core.view.WindowCompat
 
 /**
  * Pick Image
@@ -42,12 +41,13 @@ open class ImagePickerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        WindowCompat.setDecorFitsSystemWindows(window, true)
         customConfigs()
         loadBundle(savedInstanceState)
     }
 
-    abstract fun customConfigs()
+    open fun customConfigs() {
+
+    }
 
     /**
      * Save all appropriate activity state.
