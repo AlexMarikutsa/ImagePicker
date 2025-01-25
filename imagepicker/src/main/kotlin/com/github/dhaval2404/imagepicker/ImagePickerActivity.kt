@@ -14,7 +14,7 @@ import com.github.dhaval2404.imagepicker.provider.CropProvider
 import com.github.dhaval2404.imagepicker.provider.GalleryProvider
 import com.github.dhaval2404.imagepicker.util.FileUriUtils
 import android.view.WindowInsets
-import androidx.core.view.WindowCompat
+//import androidx.core.view.WindowCompat
 /**
  * Pick Image
  *
@@ -42,7 +42,7 @@ open class ImagePickerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        WindowCompat.setDecorFitsSystemWindows(window, true)
+//        WindowCompat.setDecorFitsSystemWindows(window, true)
         window.decorView.setOnApplyWindowInsetsListener { view, insets ->
             val systemBarsInsets = insets.getInsets(WindowInsets.Type.systemBars())
             view.setPadding(
