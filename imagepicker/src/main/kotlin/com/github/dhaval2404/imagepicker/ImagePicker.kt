@@ -334,7 +334,7 @@ open class ImagePicker {
         /**
          * Get Bundle for ImagePickerActivity
          */
-        private fun getBundle(): Bundle {
+        public fun getBundle(): Bundle {
             return Bundle().apply {
                 putSerializable(EXTRA_IMAGE_PROVIDER, imageProvider)
                 putStringArray(EXTRA_MIME_TYPES, mimeTypes)
